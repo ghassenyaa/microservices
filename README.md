@@ -9,16 +9,16 @@ This project demonstrates the integration of GraphQL and gRPC services using Nod
 
 ## Installation  
 1. Clone the repository:  
-
-git clone https://github.com/ghassenyaa/microservices.git
-
+  ```
+  git clone https://github.com/ghassenyaa/microservices.git
+  ```
 
 
 2. Install dependencies:  
-
-cd your-repo
-npm install
-
+  ```
+  cd your-repo
+  npm install
+  ```  
 
 3. Set up the database:  
 - Ensure you have SQLite installed.  
@@ -28,9 +28,9 @@ npm install
   ```  
 
 4. Start the server:  
-
-node apiGatways.js
-
+  ```
+  node apiGatways.js
+  ```
 
 ## Usage  
 - The GraphQL server runs on http://localhost:3000/graphql.  

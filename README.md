@@ -1,71 +1,51 @@
-# Library Book Microservice
-Library Book Microservice is a microservices-based application built with Node.js, gRPC, GraphQL, and REST, 
-using SQLite as the database. It consists of three entities: User, Library, and Book. 
-This README file provides an overview of the project and other relevant information.
+GraphQL and gRPC Service Integration
+This project demonstrates the integration of GraphQL and gRPC services using Node.js, SQLite, and Protobuf.
 
-## Table of Contents
 Features
-Technologies
-Getting Started
-Prerequisites
+GraphQL API to manage libraries, books, and users.
+gRPC service for managing books.
+SQLite database for storing data.
+Integration with both RESTful and gRPC APIs.
+
+Installation
+Clone the repository:
+git clone https://github.com/ghassenyaa/microservices.git 
+Install dependencies:
+cd your-repo
+npm install
+Set up the database:
+Ensure you have SQLite installed.
+Run the following command to create the SQLite database and tables:
+touch database.db
+Start the server:
+node apiGatways.js
+
 Usage
-API Endpoints
-Database
-Contributing
+The GraphQL server runs on http://localhost:3000/graphql.
+RESTful endpoints are available for libraries, books, and users.
+gRPC services are available for managing books, libraries, and users.
+GraphQL Queries and Mutations
+library(id: ID!): Get a library by its ID.
+librarys: Get all libraries.
+book(id: ID!): Get a book by its ID.
+books: Get all books.
+user(id: ID!): Get a user by its ID.
+users: Get all users.
+createLibrary(id: ID!, title: String!, description: String!): Create a new library.
+createBook(id: ID!, title: String!, description: String!): Create a new book.
+updateLibrary(id: ID!, title: String!, description: String!): Update a library.
+updateBook(id: ID!, title: String!, description: String!): Update a book.
+deleteLibrary(id: ID!): Delete a library.
+deleteBook(id: ID!): Delete a book.
+createUser(id: ID!, username: String!, password: String!, email: String!): Create a new user.
+updateUser(id: ID!, username: String!, password: String!, email: String!): Update a user.
+deleteUser(id: ID!): Delete a user.
+gRPC Services
+The gRPC service for managing books runs on localhost:50052.
+The gRPC service for managing libraries runs on localhost:50051.
+The gRPC service for managing users runs on localhost:50053.
+You can use gRPC clients to interact with the services using the corresponding service definitions provided in library.proto and user.proto.
 
-## Features
-Microservices architecture with gRPC, GraphQL, and REST
-CRUD operations for User, Library, and Book entities
-Communication between services using gRPC and RESTful APIs
-GraphQL endpoint for flexible querying and data manipulation
 
-## Technologies
-Node.js
-gRPC
-GraphQL
-RESTful APIs
-SQLite
 
-# Getting Started
 
-## Prerequisites :
-Node.js (version 16.14.0)
-npm (version 8.5.2)
-SQLite (version 5.1.6)
-graphql (version 16.6.0)
-
-## Installation :
-download all files
-Install the dependencies
-
-## Usage : 
-Start the microservices:
-Start all microservices and the gateway in this order :
-node libraryMicroservice.js
-node bookMicroservice.js
-node userMicroservice.js
-node apiGateway.js
-The microservices should now be running, and you can access them using the provided endpoints.
-
-## API Endpoints :
-GET /library: Retrieves all librarys from the database.
-GET /librarys/:id: Retrieves a specific library by its ID.
-GET /books/:id: Retrieves a specific book by its ID.
-GET /books: Retrieves all books from the database.
-POST /library: Creates a new library in the database.
-POST /books: Creates a new book in the database.
-PUT /library/:id: Updates a specific library by its ID.
-PUT /book/:id: Updates a specific book by its ID.
-DELETE /library/:id: Deletes a specific library by its ID.
-DELETE /book/:id: Deletes a specific book by its ID.
-GET /librarys: Retrieves all librarys from the database.
-GET /users: Retrieves all users from the database.
-GET /users/:id: Retrieves a specific user by its ID.
-POST /user: Creates a new user in the database.
-DELETE /user/:id: Deletes a specific user by its ID.
-
-## Database :
-The project uses SQLite as the database system. The SQLite database file can be found in the database directory.you can delete the database file and it will be recreated when starting the project.
-
-## Contributing :
-Contributions are welcome! If you find any issues or have suggestions for improvement, please submit an issue or a pull request. For major changes, please open an issue first to discuss potential changes.
